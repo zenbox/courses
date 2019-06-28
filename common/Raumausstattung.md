@@ -25,7 +25,6 @@
 - Eine aktuelle Version des Chrome-Browsers von Google. https://www.google.com/intl/de_de/chrome/
 
 **Empfohlene Extensions für Visual Studio Code**
-VS Code Extensions:
 
 - Auto Rename Tag, formulahendry.auto-rename-tag
 - Beautify, hookyqr.beautify
