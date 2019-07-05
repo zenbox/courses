@@ -1,12 +1,7 @@
-// webpack.config.js
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const Fiber = require('fibers');
 
 module.exports = {
-
-    // mode: 'development',
-    mode: 'production',
+    mode: 'development',
 
     watch: true,
     watchOptions: {
@@ -15,38 +10,26 @@ module.exports = {
         ignored: /node_modules/
     },
 
-    entry: './src/index.js',
+    entry: './src/index.ts',
 
     module: {
         rules: [{
-                test: /\.jsx?$/,
-                exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    // fallback to style-loader in development
-                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
-                ]
-                // use: [{
-                //     loader: 'style-loader' // creates style nodes from JS strings
-                // }, {
-                //     loader: 'css-loader' //   translates CSS into CommonJS
-                // }, {
-                //     loader: 'sass-loader', // compiles Sass to CSS, using Node Sass by default
-                //     options: {
-                //         includePaths: ['./src/sass/'],
-                //         fiber: Fiber
-                //     }
-                // }]
-            }
-        ]
+            test: [
+                /\.tsx?$/,
+                /\.css$/
+            ],
+            use: [
+                'ts-loader',
+                'css-loader'
+            ],
+            exclude: /node_modules/
+        }]
     },
 
     resolve: {
         extensions: [
+            '.tsx',
+            '.ts',
             '.js'
         ]
     },
