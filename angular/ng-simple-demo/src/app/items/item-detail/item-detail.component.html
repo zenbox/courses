@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>Item Detail</h3>
+  <div class="container" *ngIf="item">
+    <div class="row" *ngIf="canEdit()">
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="onEdit()" style="margin-right: 10px">Edit</button>
+        <button type="button" class="btn btn-danger"  (click)="onDelete()">Delete</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <strong>ID:</strong> {{ item?.id }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <strong>Name:</strong> {{ item?.name }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <strong>Image:</strong> <img [src]="item?.image" [alt]="item?.name">
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="!item">
+    <div class="alert alert-info" role="alert">
+      Please select an item!
+    </div>
+  </div>
+</div>

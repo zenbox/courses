@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h2>Items</h2>
+  
+  <div class="row">
+    <div class="col">
+<!--       <ul class="nav">
+        <li class="nav-item"><a [routerLink]="['new']" class="nav-link">New</a></li>
+        <li class="nav-item"><a [routerLink]="['2']" class="nav-link">Detail (2)</a></li>
+        <li class="nav-item"><a [routerLink]="['2', 'edit']" class="nav-link">Edit (2)</a></li>
+      </ul>   -->    
+      <button type="button" class="btn btn-primary" (click)="onNew()">New</button>    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+        <app-item-list></app-item-list>
+      </div>
+      <div class="col-md-7">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>

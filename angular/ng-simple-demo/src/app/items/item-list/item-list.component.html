@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Item List</h3>
+  <div class="list-group">
+    <a *ngFor="let item of items; let idx = index" 
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/items', item.id]" routerLinkActive="active">
+      {{ idx + 1 }}. {{ item.name }}
+    </a>
+  </div>
+</div>
