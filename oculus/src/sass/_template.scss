@@ -1,0 +1,19 @@
+html,
+html * {
+    box-sizing: border-box;
+}
+
+.static {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    position: absolute;
+    z-index: 2;
+    border: 1px dotted lime;
+    pointer-events: none;
+}
+
+h1 {
+    pointer-events: auto;
+}
